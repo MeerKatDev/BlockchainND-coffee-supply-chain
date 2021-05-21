@@ -96,43 +96,43 @@ contract SupplyChain {
 
   // Define a modifier that checks if an item.state of a upc is Processed
   modifier processed(uint _upc) {
-    require(items[_upc].itemState == State.Processed)
+    require(items[_upc].itemState == State.Processed);
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is Packed
   modifier packed(uint _upc) {
-    require(items[_upc].itemState == State.Packed)
+    require(items[_upc].itemState == State.Packed);
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is ForSale
   modifier forSale(uint _upc) {
-    require(items[_upc].itemState == State.ForSale)
+    require(items[_upc].itemState == State.ForSale);
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is Sold
   modifier sold(uint _upc) {
-    require(items[_upc].itemState == State.Sold)
+    require(items[_upc].itemState == State.Sold);
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is Shipped
   modifier shipped(uint _upc) {
-    require(items[_upc].itemState == State.Shipped)
+    require(items[_upc].itemState == State.Shipped);
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is Received
   modifier received(uint _upc) {
-    require(items[_upc].itemState == State.Received)
+    require(items[_upc].itemState == State.Received);
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is Purchased
   modifier purchased(uint _upc) {
-    require(items[_upc].itemState == State.Purchased)
+    require(items[_upc].itemState == State.Purchased);
     _;
   }
 
@@ -302,7 +302,7 @@ contract SupplyChain {
   )
   {
     // Assign values to the 8 parameters
-    var item = items[_upc];
+    Item storage item = items[_upc];
     itemSKU = item.sku;
     itemUPC = item.upc;
     ownerID = item.ownerID;
@@ -341,7 +341,7 @@ contract SupplyChain {
   )
   {
     // Assign values to the 9 parameters
-    var item = items[_upc];
+    Item storage item = items[_upc];
     itemSKU = item.sku;
     itemUPC = item.upc;
     productID = item.productID;
@@ -365,4 +365,5 @@ contract SupplyChain {
     consumerID
     );
   }
+
 }
