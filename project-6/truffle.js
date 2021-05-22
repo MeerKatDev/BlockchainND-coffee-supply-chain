@@ -1,3 +1,7 @@
+require('dotenv').config()
+
+const HDWalletProvider = require("truffle-hdwallet-provider");
+
 module.exports = {
   networks: {
     development: {
@@ -19,6 +23,14 @@ module.exports = {
       //  },
       //  evmVersion: "byzantium"
       // }
+    }
+  },
+  networks: {
+    rinkeby: {
+        provider: function() {
+         return new HDWalletProvider(process.env.MNEMONIC, "https://rinkeby.infura.io/v3/" + process.env.INFURA_KEY);
+        },
+        network_id: 4
     }
   }
 };
