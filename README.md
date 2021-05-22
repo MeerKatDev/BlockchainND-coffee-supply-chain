@@ -1,3 +1,16 @@
+## Versions
+```bash
+$ project-6 % truffle version
+Truffle v5.3.4 (core: 5.3.4)
+Solidity - 0.4.24 (solc-js)
+Node v16.2.0
+Web3.js v1.3.5
+```
+
+Contract address is in deployment-log.txt
+
+I included truffle-hdwallet-provider for deployment and dotenv for keeping sensitive data locally
+
 ## Note
 
 The first commit contains corrections to the configuration to make it work (they state it does work out of the box, but it doesn't) and the changes to make the first test work.
