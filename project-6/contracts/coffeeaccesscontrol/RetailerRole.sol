@@ -10,8 +10,10 @@ contract RetailerRole {
   // Define 2 events, one for Adding, and other for Removing
   event AddingRetailer(address indexed account);
   event RemovingRetailer(address indexed account);
+
   // Define a struct 'retailers' by inheriting from 'Roles' library, struct Role
   Roles.Role private retailers;
+
   // In the constructor make the address that deploys this contract the 1st retailer
   constructor() public {
     _addRetailer(msg.sender);
@@ -19,7 +21,7 @@ contract RetailerRole {
 
   // Define a modifier that checks to see if msg.sender has the appropriate role
   modifier onlyRetailer() {
-    require(isRetailer(msg.sender));
+    require(isRetailer(msg.sender), 'only for retailers');
     _;
   }
 
